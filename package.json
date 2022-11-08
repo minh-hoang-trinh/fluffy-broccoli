@@ -1,0 +1,27 @@
+{
+  "name": "@dundermifflin/eslint-config-prettier",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./scripts/update-package-json.js && node ./scripts/update-ignore-config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "files": [
+    ".eslintrc.js",
+    ".prettierrc.js",
+    "scripts",
+    "templates",
+    ".eslintignore",
+    ".prettierignore"
+  ],
+  "peerDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
+}
