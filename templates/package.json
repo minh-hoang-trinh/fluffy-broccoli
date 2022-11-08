@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "lint": "eslint src",
-    "foo": "echo bar"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier:fix": "prettier --write ."
   }
 }

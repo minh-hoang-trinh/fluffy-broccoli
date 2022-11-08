@@ -1,5 +1,5 @@
 {
-  "name": "@dundermifflin/eslint-config-prettier",
+  "name": "@dunder-mifflin/eslint-config-prettier",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
