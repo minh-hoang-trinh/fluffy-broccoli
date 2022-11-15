@@ -50,3 +50,10 @@ A --> C[Update .prettierrc.js]
 B --> D[npm run lint]
 C --> E[npm run prettier:fix]
 ```
+
+## Notes
+
+Nice to have
+- tsconfig extends
+- husky & pre-* scripts
+- package.json extends ?
