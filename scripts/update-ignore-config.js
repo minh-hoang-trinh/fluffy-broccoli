@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const filesToUpdate = [".eslintignore", ".prettierignore"];
+const filesToUpdate = [".eslintignore", ".prettierignore", "commitlint.config.js"];
 
 // replace existing files with new versions
 filesToUpdate.forEach((file) => {

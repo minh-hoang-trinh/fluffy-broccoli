@@ -1,10 +1,11 @@
 {
   "name": "@dunder-mifflin/eslint-config-prettier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./scripts/update-package-json.js && node ./scripts/update-ignore-config.js && node ./scripts/update-husky.js"
+    "prepare": "node ./scripts/prepare-husky.js",
+    "postinstall": "node ./scripts/update-package-json.js && node ./scripts/update-ignore-config.js"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +26,8 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "lint-staged": "^13.1.2"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.7.1"
   }
 }
