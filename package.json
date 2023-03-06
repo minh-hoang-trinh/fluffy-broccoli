@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./scripts/update-package-json.js && node ./scripts/update-ignore-config.js"
+    "postinstall": "node ./scripts/update-package-json.js && node ./scripts/update-ignore-config.js && node ./scripts/update-husky.js"
   },
   "author": "",
   "license": "MIT",
@@ -14,14 +14,18 @@
     "scripts",
     "templates",
     ".eslintignore",
-    ".prettierignore"
+    ".prettierignore",
+    "commitlint.config.js"
   ],
   "peerDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "eslint": "^8.26.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "lint-staged": "^13.1.2"
   }
 }
