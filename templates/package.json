@@ -4,5 +4,13 @@
     "lint:fix": "eslint . --fix",
     "prettier:fix": "prettier --write .",
     "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.{md,yaml,yml}": [
+      "prettier --write"
+    ]
   }
 }
