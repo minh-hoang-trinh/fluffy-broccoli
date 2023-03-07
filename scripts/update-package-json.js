@@ -3,29 +3,27 @@ const fs = require("fs");
 const localPackageJson = require("../../../../package.json");
 const templatePackageJson = require("../templates/package.json");
 
-// update scripts section of local package.json with additional scripts from shared package.json
-const extraScripts = Object.fromEntries(
-  Object.entries(templatePackageJson.scripts).filter(
-    ([key]) => !Object.keys(localPackageJson.scripts).includes(key)
-  )
-);
+const sections = ['scripts', 'lint-staged'];
 
-// update lint-staged section of local package.json with additional lint-staged from shared package.json
-const extraLintStaged = Object.fromEntries(
-  Object.entries(templatePackageJson["lint-staged"]).filter(
-    ([key]) => !Object.keys(localPackageJson["lint-staged"]).includes(key)
-  )
-);
+// update section of local package.json with additional section from shared package.json
+sections.map(section => {
+  if (localPackageJson[section] !== undefined) {
+    const extraSection = Object.fromEntries(
+      Object.entries(templatePackageJson[section]).filter(
+        ([key]) => !Object.keys(localPackageJson[section]).includes(key)
+      )
+    );
 
-localPackageJson.scripts = {
-  ...localPackageJson.scripts,
-  ...extraScripts,
-};
-
-localPackageJson["lint-staged"] = {
-  ...localPackageJson["lint-staged"],
-  ...extraLintStaged,
-};
+    localPackageJson[section] = {
+      ...localPackageJson[section],
+      ...extraSection
+    }
+  } else {
+    localPackageJson[section] = {
+      ...templatePackageJson[section],
+    }
+  }
+})
 
 // update local package.json file
 fs.writeFileSync(
